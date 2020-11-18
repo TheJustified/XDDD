@@ -1,0 +1,18 @@
+package
+{
+    import flash.display.Sprite;
+    import flash.external.*;
+    import flash.system.System;
+    public class XSSProject extends Sprite
+    {
+        public function XSSProject()
+        {
+            flash.system.Security.allowDomain("*");
+            ExternalInterface.marshallExceptions = true;
+            try {
+                ExternalInterface.call("Sup fuckers")
+            } catch(e:Error) {
+                trace(e);
+            }
+        }
+    }
